@@ -1,10 +1,12 @@
 FROM php:8.1.6-apache
 
-ENV TZ=America/Sao_Paulo
+ARG UID
+ARG GID
 
-# set your user name, ex: user=bernardo
-ARG user=savio
-ARG uid=1000
+ENV UID=${UID}
+ENV GID=${GID}
+
+ENV TZ=America/Sao_Paulo
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -39,10 +41,7 @@ RUN echo "xdebug.connect_timeout_ms=2000" >> /usr/local/etc/php/conf.d/docker-ph
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Create system user to run Composer and Artisan Commands
-RUN useradd -G www-data,root -u $uid -d /home/$user $user
-RUN mkdir -p /home/$user/.composer && \
-    chown -R $user:$user /home/$user
+RUN chown -R ${UID}:${GID} /var/www/html
 
 # Install redis
 RUN pecl install -o -f redis \
@@ -55,4 +54,4 @@ WORKDIR /var/www/html
 # Copy custom configurations PHP
 COPY docker/php/custom.ini /usr/local/etc/php/conf.d/custom.ini
 
-USER $user
+USER ${UID}
