@@ -42,6 +42,11 @@ docker compose exec app bash
 
 ### http://localhost:8082
 
+Administrador
+
+- usuário: ```root```
+- senha: ```123456```
+
 # VERSIONAMENTO
 
 ## 1 - Remover todo o histórico do git
