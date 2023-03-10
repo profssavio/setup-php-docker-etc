@@ -20,10 +20,11 @@ docker compose up -d
 
 ### 3 - Testar se o php está funcionando corretamente
 
-No browser digitar: http://localhost:3000/phpinfo.php
+- No browser digitar: http://localhost:3000/phpinfo.php
+- Agora bastar criar os seus arquivos php conforme o seu projeto.
 
 
-### 4 - Acessar o container para rodar o composer
+# COMPOSER - Acessar o container para rodar o composer
 
 ```
 docker compose exec app bash
