@@ -30,9 +30,13 @@ docker compose up -d
 docker compose exec app bash
 ```
 
-```
-composer install
-```
+## COMANDOS BÁSICOS
+
+- ```composer init``` : cria seu arquivo composer.json para você de forma simples e rápida.
+- ```composer install``` : instalar todas as dependências descritas no arquivo composer.json, devemos utilizar este comando para executar a tarefa de forma automática.
+- ```composer update``` : caso deseje inserir ou remover pacotes ou alterar o autoload devemos sempre atualizar nosso projeto.
+- ```composer dump-autoload``` : toda vez que houver necessidade de atualizar o autoloader do nosso sistema
+
 
 # PhpMyAdmin
 
