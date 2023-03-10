@@ -152,3 +152,38 @@ docker compose up --build --force-recreate
 
 - https://www.php.net/manual/pt_BR/ini.core.php
 - Arquivo de configuração fica no diretório: ```./docker/php/custom.ini```
+
+#  PHP
+
+## Conceito de strict_types
+
+Por padrão todos os arquivos PHP estão em modo “fraco” de checagem de tipo, para entender melhor veja o exemplo abaixo:
+
+```
+<?php
+function sum(int $num1) : int 
+{
+    return $num1 + 1;
+}
+var_dump(sum('1')); // int(2)
+```
+
+Percebam que nossa função foi assinada para receber um parâmetro $num1 do tipo int, e retornar também um int, sendo a soma do parâmetro passado mais 1, porém a chamada da função é feita passando a string ‘1’ e mesmo assim o PHP conseguiu interpretar, converter (string -> int) e retornar um int, que neste caso foi o número 2. E isso só foi possível devido estarmos com o modo fraco de tipo de checagem. Interessante não ?
+
+Agora vamos ativar o modo strict_types e fazer o mesmo exemplo anterior:
+
+```
+<?php
+declare(strict_types=1);
+function sum(int $num1) : int 
+{
+    return $num1 + 1;
+}
+var_dump(sum('1'));
+```
+
+A única mudança feita foi a inclusão do comando declare(strict_types=1), ou seja, a partir deste momento, a checagem de tipo será feita, e é como se estivéssemos dizendo para o PHP para utilizar o modo “forte” de checagem de tipo. O exemplo acima irá produzir um fatal error, como abaixo:
+
+```
+PHP Fatal error:  Uncaught TypeError: Argument 1 passed to sum() must be of the type integer, string given
+```
