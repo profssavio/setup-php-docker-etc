@@ -122,7 +122,7 @@ docker rmi $IMAGE_id
 docker volume list
 ```
 
-7. Parar e elimnar os container de outra forma.
+7. Parar e eliminar os container de outra forma.
 
 ```
 docker compose down
