@@ -83,37 +83,19 @@ git push
 ```
 # DOCKER - COMANDOS EXTRAS
 
-1. Parar e elimnar os container
-
-```
-docker compose down
-```
-
-2. Listar os volumes
-
-```
-docker volume list
-```
-
-3. Recriar a imagem
-
-```
-docker compose up --build --force-recreate
-```
-
-4. Listar os container que estão rodando
+1. Listar os container que estão rodando
 
 ```
 docker ps 
 ```
 
-5. Listar todos os container (rodando ou parado)
+2. Listar todos os container (rodando ou parado)
 
 ```
 docker ps -a
 ```
 
-6. Parar ou subir um container
+3. Parar ou subir um container
 
 ```
 docker stop $CONTAINER_ID
@@ -121,15 +103,33 @@ docker stop $CONTAINER_ID
 docker start $CONTAINER_ID
 ```
 
-7. Remover um container 
+4. Remover um container 
 
 ```
 docker rm $CONTAINER_ID
 ```
 
-8. Listar uma imagem e remover
+5. Listar uma imagem e remover
 
 ```
 docker images
 docker rmi $IMAGE_id
+```
+
+6. Listar os volumes
+
+```
+docker volume list
+```
+
+7. Parar e elimnar os container de outra forma.
+
+```
+docker compose down
+```
+
+8. Recriar a imagem
+
+```
+docker compose up --build --force-recreate
 ```
