@@ -52,7 +52,7 @@ git commit -m "xxx"
 git push
 ```
 
-# XDEBUG com VSCODE - Adicionar no arquivo launch.json
+# XDEBUG com VSCODE
 
 ```
 {
