@@ -41,7 +41,8 @@ RUN echo "xdebug.connect_timeout_ms=2000" >> /usr/local/etc/php/conf.d/docker-ph
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-RUN chown -R ${UID}:${GID} /var/www/html
+RUN chown -R www-data:www-data /var/www/html
+RUN a2enmod rewrite
 
 # Install redis
 RUN pecl install -o -f redis \
