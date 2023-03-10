@@ -147,3 +147,7 @@ docker compose down
 ```
 docker compose up --build --force-recreate
 ```
+
+# Descrição das principais diretivas do php.ini 
+
+- https://www.php.net/manual/pt_BR/ini.core.php
