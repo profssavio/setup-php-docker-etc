@@ -1,5 +1,9 @@
 # SETUP PHP ESCOLA TÉCNICA
 
+## REQUISITOS NECESSÁRIOS
+
+- Ter o docker instalado no computador ```https://docs.docker.com/engine/install/```
+
 ## PASSOS
 
 ### 1 - Clone repositório do SETUP PHP
