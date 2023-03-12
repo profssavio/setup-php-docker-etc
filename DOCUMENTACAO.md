@@ -20,7 +20,7 @@ git clone https://github.com/laravel/laravel.git app-laravel
 Copie os arquivos do branch setup-laravel-docker para o seu projeto
 
 ```
-cp -rf setup-laravel-docker/* app-laravel/
+cp -rf setup-php-docker-etc/* app-laravel/
 ```
 
 Entra dentro do diretório
