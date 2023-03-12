@@ -15,6 +15,17 @@ Clone repositório do Laravel e passo a passo
 
 ```
 git clone https://github.com/laravel/laravel.git app-laravel
+```
+
+Copie os arquivos do branch setup-laravel-docker para o seu projeto
+
+```
+cp -rf setup-laravel-docker/* app-laravel/
+```
+
+Entra dentro do diretório
+
+```
 cd app-laravel
 ```
 
