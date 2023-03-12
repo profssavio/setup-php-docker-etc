@@ -24,10 +24,10 @@ services:
         container_name: mysql-etc
         restart: unless-stopped
         environment:
-            MYSQL_DATABASE: dbmodelo
-            MYSQL_ROOT_PASSWORD: 123456
-            MYSQL_PASSWORD: 123456
-            MYSQL_USER: etc
+            MYSQL_DATABASE: ${DB_DATABASE:-laravel}
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
+            MYSQL_PASSWORD: ${DB_PASSWORD:-userpass}
+            MYSQL_USER: ${DB_USERNAME:-username}
         volumes:
             - mysql_data_etc:/var/lib/mysql
         ports:

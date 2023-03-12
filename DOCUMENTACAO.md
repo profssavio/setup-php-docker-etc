@@ -1,34 +1,79 @@
-# SETUP PHP ESCOLA TÉCNICA
-
-## REQUISITOS NECESSÁRIOS
+# SETUP PHP LARAVEL
 
 - Ter o docker instalado no computador ```https://docs.docker.com/engine/install/```
 
 ## PASSOS
 
-### 1 - Clone repositório do SETUP PHP
+Clone repositório do SETUP PHP
 
 ```
 https://github.com/profssavio/setup-php-docker-etc.git
+git checkout setup-laravel-docker
 ```
 
-### 2 - Suba os containers do projeto
+Clone repositório do Laravel e passo a passo
+
+```
+git clone https://github.com/laravel/laravel.git app-laravel
+cd app-laravel
+```
+
+Crie o Arquivo .env
+
+```
+cp .env.example .env
+```
+
+Atualize as variáveis de ambiente do arquivo .env
+
+
+```
+APP_NAME=LaravelApp
+APP_URL=http://localhost:3000
+
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=nome_que_desejar_db
+DB_USERNAME=nome_usuario
+DB_PASSWORD=senha_aqui
+
+CACHE_DRIVER=redis
+QUEUE_CONNECTION=redis
+SESSION_DRIVER=redis
+
+REDIS_HOST=redis
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+```
+
+Suba os containers do projeto
 
 ```
 docker compose up -d
 ```
 
-### 3 - Testar se o php está funcionando corretamente
-
-- No browser digitar: http://localhost:3000/phpinfo.php
-- Agora bastar criar os seus arquivos php conforme o seu projeto.
-
-
-# COMPOSER - Acessar o container para rodar o composer
+Acessar o container do app
 
 ```
 docker compose exec app bash
 ```
+
+Instale as dependências do projeto
+
+```
+composer install
+```
+
+Gere a key do projeto Laravel
+
+```
+php artisan key:generate
+```
+
+Acessar o projeto: http://localhost:3000
+
+
 
 ## COMANDOS BÁSICOS
 
@@ -146,44 +191,4 @@ docker compose down
 
 ```
 docker compose up --build --force-recreate
-```
-
-# Descrição das principais diretivas do php.ini 
-
-- https://www.php.net/manual/pt_BR/ini.core.php
-- Arquivo de configuração fica no diretório: ```./docker/php/custom.ini```
-
-#  PHP
-
-## Conceito de strict_types
-
-Por padrão todos os arquivos PHP estão em modo “fraco” de checagem de tipo, para entender melhor veja o exemplo abaixo:
-
-```
-<?php
-function sum(int $num1) : int 
-{
-    return $num1 + 1;
-}
-var_dump(sum('1')); // int(2)
-```
-
-Percebam que nossa função foi assinada para receber um parâmetro $num1 do tipo int, e retornar também um int, sendo a soma do parâmetro passado mais 1, porém a chamada da função é feita passando a string ‘1’ e mesmo assim o PHP conseguiu interpretar, converter (string -> int) e retornar um int, que neste caso foi o número 2. E isso só foi possível devido estarmos com o modo fraco de tipo de checagem. Interessante não ?
-
-Agora vamos ativar o modo strict_types e fazer o mesmo exemplo anterior:
-
-```
-<?php
-declare(strict_types=1);
-function sum(int $num1) : int 
-{
-    return $num1 + 1;
-}
-var_dump(sum('1'));
-```
-
-A única mudança feita foi a inclusão do comando declare(strict_types=1), ou seja, a partir deste momento, a checagem de tipo será feita, e é como se estivéssemos dizendo para o PHP para utilizar o modo “forte” de checagem de tipo. O exemplo acima irá produzir um fatal error, como abaixo:
-
-```
-PHP Fatal error:  Uncaught TypeError: Argument 1 passed to sum() must be of the type integer, string given
 ```
