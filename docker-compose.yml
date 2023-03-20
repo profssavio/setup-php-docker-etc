@@ -23,8 +23,6 @@ services:
         image: mysql:8
         container_name: mysql-etc
         restart: unless-stopped
-        ports:
-            - "3306:3306"        
         environment:
             MYSQL_DATABASE: ${DB_DATABASE:-laravel}
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
@@ -57,7 +55,6 @@ services:
 
 networks:
     etc:
-        driver: bridge
 
 volumes:
     mysql_data_etc:
