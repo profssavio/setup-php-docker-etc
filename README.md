@@ -8,6 +8,7 @@ Clone repositório do SETUP PHP
 
 ```
 git clone https://github.com/profssavio/setup-php-docker-etc.git
+cd setup-php-docker-etc
 git checkout setup-laravel-docker
 ```
 
