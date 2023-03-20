@@ -31,6 +31,12 @@ Entra dentro do diretório
 cd app-laravel
 ```
 
+Apagar as referências do git anterior
+
+```
+rm -rf .git .github/
+```
+
 Crie o Arquivo .env
 
 ```
