@@ -14,7 +14,7 @@ services:
         volumes:
             - ./:/var/www/html/
         ports:
-            - 3000:80             
+            - 3002:80             
         depends_on:
             - redis
         networks:
@@ -31,7 +31,7 @@ services:
         volumes:
             - mysql_data_etc:/var/lib/mysql
         ports:
-            - "3388:3306"
+            - "3306:3306"
         command: --default-authentication-plugin=mysql_native_password            
         networks:
             - etc

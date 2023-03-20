@@ -82,7 +82,7 @@ Gere a key do projeto Laravel
 php artisan key:generate
 ```
 
-Acessar o projeto: http://localhost:3000
+Acessar o projeto: http://localhost:3002
 
 
 
@@ -111,7 +111,7 @@ Administrador
 rm -rf .git
 ```
 
-## 2 - Versionando 
+## 2 - Crie um repositorio no GIT e sigas instruções, exemplo:
 
 ```
 git init
