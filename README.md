@@ -187,3 +187,24 @@ A única mudança feita foi a inclusão do comando declare(strict_types=1), ou s
 ```
 PHP Fatal error:  Uncaught TypeError: Argument 1 passed to sum() must be of the type integer, string given
 ```
+# GIT
+
+Alguns comandos fundamentais são essenciais para entender e usar efetivamente o controle de versão. 
+Aqui estão alguns dos comandos mais importantes:
+
+- **git init:** Inicializa um repositório Git em um diretório local.
+- **git clone:** Clona um repositório Git existente para o seu diretório local.
+- **git add:** Adiciona arquivos ao index (staging area) para serem incluídos no próximo commit.
+- **git commit:** Grava as mudanças no repositório. É necessário incluir uma mensagem descritiva.
+- **git status:** Mostra o estado atual do seu repositório, incluindo arquivos modificados, adicionados e excluídos.
+- **git diff:** Mostra as diferenças entre o estado atual do seu diretório de trabalho e o estado atual do repositório.
+- **git pull:** Atualiza o repositório local com as mudanças do repositório remoto.
+- **git push:** Envia os commits locais para o repositório remoto.
+- **git branch:** Lista, cria ou exclui branches.
+- **git checkout:** Permite mudar entre branches ou restaurar arquivos.
+- **git merge:** Une duas branches diferentes.
+- **git rebase:** Reaplica commits de uma branch em outra base, reescrevendo o histórico.
+- **git log:** Mostra o histórico de commits.
+- **git remote:** Gerencia repositórios remotos.
+- **git fetch:** Busca as atualizações do repositório remoto, mas não as aplica.
+- **git reset:** Permite reverter o estado do repositório para um determinado ponto na história.
