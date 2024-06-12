@@ -208,3 +208,7 @@ Aqui estão alguns dos comandos mais importantes:
 - **git remote:** Gerencia repositórios remotos.
 - **git fetch:** Busca as atualizações do repositório remoto, mas não as aplica.
 - **git reset:** Permite reverter o estado do repositório para um determinado ponto na história.
+
+Exemplo:
+
+Para voltar para o último commit, você pode usar o comando ```git reset --hard HEAD``` Isso redefine o seu diretório de trabalho e o índice para corresponder ao último commit, descartando quaisquer alterações não comitadas.
